@@ -2,11 +2,13 @@ import discord
 from discord.ext import commands
 import json
 import random
-
+import os
+from dotenv import load_dotenv
 # --- CÀI ĐẶT BAN ĐẦU ---
-
+load_dotenv()
+my_token = os.getenv("Discord_Token")
 # Thay 'YOUR_BOT_TOKEN' bằng token của bạn
-TOKEN = "MTI1NDgwNjcyOTY0MDkwNjgxNA.GQ1o2-.d4m9xL_El43kTRU5GYi2ScMRWi3R7joKK4LhlI"
+TOKEN = my_token
 
 # Thiết lập intents để bot có thể nhận các sự kiện cụ thể
 intents = discord.Intents.default()
