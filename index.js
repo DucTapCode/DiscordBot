@@ -1,8 +1,15 @@
 import "dotenv/config";
+import http from "http";
 import { Client, GatewayIntentBits, Collection } from "discord.js";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+
+// Tạo server web để UptimeRobot ping vào
+http.createServer((req, res) => {
+  res.write("Bot dang online!");
+  res.end();
+}).listen(process.env.PORT || 3000); // Render sẽ tự cấp cổng PORT
 
 // 1. Tái tạo lại __dirname cho chuẩn ES Module
 const __filename = fileURLToPath(import.meta.url);
